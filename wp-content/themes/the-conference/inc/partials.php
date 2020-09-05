@@ -174,8 +174,8 @@ function the_conference_get_footer_copyright(){
     if( $copyright ){
         echo wp_kses_post( $copyright );
     }else{
-        esc_html_e( '&copy; Copyright ', 'the-conference' );
         echo date_i18n( esc_html__( 'Y', 'the-conference' ) );
+        esc_html_e( ' &copy; Copyright ', 'the-conference' );
         echo ' <a href="' . esc_url( home_url( '/' ) ) . '">' . esc_html( get_bloginfo( 'name' ) ) . '</a>. ';
         esc_html_e( 'All Rights Reserved. ', 'the-conference' );
     }

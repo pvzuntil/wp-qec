@@ -1184,7 +1184,7 @@ if( ! function_exists( 'the_conference_ed_author_link' ) ) :
      * Author link in footer
     */
     function the_conference_ed_author_link(){
-        echo '<span class="author-link">' . esc_html__( 'The Conference | Developed by ', 'the-conference' ) . '<a href="' . esc_url( 'https://rarathemes.com/' ) .'" rel="nofollow" target="_blank">' . esc_html__( 'Rara Theme', 'the-conference' ) . '</a></span>';
+        echo '<span class="author-link">' . esc_html__( 'QEC | Developed by ', 'the-conference' ) . '<a href="' . esc_url( 'pvzuntil.github.io' ) .'" rel="nofollow" target="_blank">' . esc_html__( 'untillNess', 'the-conference' ) . '</a></span>';
     }
 endif;
 

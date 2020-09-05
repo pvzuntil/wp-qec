@@ -531,7 +531,7 @@ function the_conference_footer_bottom(){ ?>
             <?php
                 the_conference_get_footer_copyright();
                 the_conference_ed_author_link();
-                the_conference_ed_wp_link();
+                // the_conference_ed_wp_link();
                 
                 if ( function_exists( 'the_privacy_policy_link' ) ) {
                     the_privacy_policy_link();
