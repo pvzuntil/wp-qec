@@ -183,11 +183,6 @@ function custom_timeline(){ ?>
                 <h2 class="section-title" style="margin-bottom: 1em;">Prosedur Lomba</h2>
                 <main id="custom-timeline">
                 <?php
-                    $args = array(
-                        'posts_per_page'   => -1,
-                        'category'         => 'prosedur-lomba',
-                    );
-                    
                     $posts = get_posts("category_name=prosedur-lomba&posts_per_page=1");
                     foreach ( $posts as $post ) : setup_postdata( $post ); ?>
                         <?= the_content()?>
