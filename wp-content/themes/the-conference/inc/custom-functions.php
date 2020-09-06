@@ -229,6 +229,7 @@ function the_conference_scripts() {
     wp_enqueue_script( 'waypoints', get_template_directory_uri() . '/js' . $build . '/waypoints' . $suffix . '.js', array( 'jquery' ), '2.0.3', true );
     wp_enqueue_script( 'wow', get_template_directory_uri() . '/js' . $build . '/wow' . $suffix . '.js', array( 'jquery' ), '2.0.3', true );
 	wp_enqueue_script( 'the-conference', get_template_directory_uri() . '/js' . $build . '/custom' . $suffix . '.js', array( 'jquery', 'jquery-ui-tabs', 'jquery-ui-core' ), THE_CONFERENCE_THEME_VERSION, true );
+	wp_enqueue_script( 'custom', get_template_directory_uri() . '/js/me.js', array( 'jquery', 'jquery-ui-tabs', 'jquery-ui-core' ), THE_CONFERENCE_THEME_VERSION, true );
     
     $banner_control        = get_theme_mod( 'ed_banner_section', 'static_banner' );
     $ed_banner_event_timer = get_theme_mod( 'ed_banner_event_timer', true );
@@ -255,6 +256,7 @@ function the_conference_scripts() {
 	}
 
     wp_enqueue_style( 'the-conference', get_stylesheet_uri(), array(), THE_CONFERENCE_THEME_VERSION );
+    wp_enqueue_style( 'custom', get_template_directory_uri() . '/css/me.css', array(), THE_CONFERENCE_THEME_VERSION );
 }
 endif;
 add_action( 'wp_enqueue_scripts', 'the_conference_scripts' );

@@ -103,7 +103,7 @@ function the_conference_banner(){
 
                     if( ( $banner_label_one && $banner_link_one ) || ( $banner_label_two && $banner_link_two ) ){
                         echo '<div class="btn-wrap">';
-                        if( $banner_label_one && $banner_link_one ) echo '<a href="' . esc_url( $banner_link_one ) . '" class="btn-transparent wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.5s">' . esc_html( $banner_label_one ) . '</a>';
+                        if( $banner_label_one && $banner_link_one ) echo '<a href="' . esc_url( $banner_link_one ) . '" class="btn-transparent wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.5s" id="custom-proc">' . esc_html( $banner_label_one ) . '</a>';
                         if( $banner_label_two && $banner_link_two ) echo '<a href="' . esc_url( $banner_link_two ) . '" class="btn-filled wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">' . esc_html( $banner_label_two ) . '</a>';
                         echo '</div>';
                     } 
@@ -167,6 +167,46 @@ function the_conference_content_start(){
 }
 endif;
 add_action( 'the_conference_content', 'the_conference_content_start' );
+
+
+
+if( ! function_exists( 'custom_timeline' ) ) :
+/**
+ * Content Start
+ * 
+*/
+function custom_timeline(){ ?>
+<?php
+    if(is_front_page()){ ?>
+        <section id="custom-timeline" class="blog-section">
+            <div class="container">
+                <h2 class="section-title" style="margin-bottom: 1em;">Prosedur Lomba</h2>
+                <main id="custom-timeline">
+                <?php
+                    $args = array(
+                        'posts_per_page'   => -1,
+                        'category'         => 'prosedur-lomba',
+                    );
+                    
+                    $posts = get_posts("category_name=prosedur-lomba&posts_per_page=1");
+                    foreach ( $posts as $post ) : setup_postdata( $post ); ?>
+                        <?= the_content()?>
+                    <?php endforeach; 
+                    wp_reset_postdata();?>
+                <!--     <p>Doggo ipsum long bois lotsa pats blep. What a nice floof ruff super chub very good spot, the neighborhood pupper lotsa pats. Borkdrive shibe shoober what a nice floof, borking doggo.</p>
+                    <p>Shoober shooberino adorable doggo many pats, heckin good boys many pats pupper wrinkler, corgo maximum borkdrive. A frighten puggo wow very biscit.</p>
+                    <p>Big ol h*ck adorable doggo vvv smol borking doggo with a long snoot for pats big ol, he made many woofs doing me a frighten puggo wow very biscit, ruff fat boi ruff long doggo. </p>
+                    <p>Long bois mlem I am bekom fat wrinkler puggo maximum borkdrive big ol pupper I am bekom fat, fluffer vvv adorable doggo lotsa pats snoot. I am bekom fat ur givin me a spook length boy wow very biscit very good spot.</p>
+                    <p>Doggo ipsum long bois lotsa pats blep. What a nice floof ruff super chub very good spot, the neighborhood pupper lotsa pats. Borkdrive shibe shoober what a nice floof, borking doggo.</p> -->
+                </main>
+            </div>
+        </section>
+    <?php } ?>
+<?php }
+endif;
+add_action( 'the_conference_content', 'custom_timeline' );
+    
+
 
 if( ! function_exists( 'the_conference_entry_header' ) ) :
 /**
